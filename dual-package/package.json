@@ -11,11 +11,11 @@
     "default": "./lib/cjs/index.js"
   },
   "scripts": {
-    "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:esm": "tsc -p tsconfig.esm.json",
-    "build:types": "tsc -p tsconfig.types.json",
+    "build:cjs": "tsc -p build/tsconfig.cjs.json",
+    "build:esm": "tsc -p build/tsconfig.esm.json",
+    "build:types": "tsc -p build/tsconfig.types.json",
     "build": "npm run clean && npm run build:cjs && npm run build:esm && npm run build:types && npm run fixup",
-    "fixup": "",
+    "fixup": "node build/fixup.js",
     "clean": "rimraf lib/"
   },
   "keywords": [],
